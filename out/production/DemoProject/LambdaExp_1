@@ -1,0 +1,87 @@
+
+	=== Lambda expression ===
+
+	--- Why LEX was introduced in Java ---
+	1.first objective
+	- appeared in Java 1.8
+	- to bring functional programming features in Java we use LEXP
+
+	In OOP lang data stored in classes and objects
+	In func prog lang data stored in functions and vars.
+
+	by def Java doesn't support funct progr features (fpf)
+
+	2. second objectiove
+	code optimization
+
+
+	--- What is Lambda expression ---
+	---> It is anonymus function <---
+	-> doesn't have name
+	-> doesn't have return type
+	-> doesn't have access modifier
+
+	--- How to write Lambda expression ---
+		public void print() { sout("welcome");} ---> regular method
+
+		! to convert it to LEX we need remove access modif, return type, name of method().
+
+		() -> { sout("welcome");}  //  Lambda expression (we need arrow mark ->)
+		! if there's only one expression, we dont need to use curly braces.
+
+		==== () -> {sout( "welcome!"); } =====
+
+		------------------------------------------------------------
+
+	public void print(int a, int b) { sout(a+b); }
+
+	Convert to lax: (int a, int b) -> sout(a+b); // we don't need to specify type of var
+	Final version: (a, b) -> sout(a+b);
+
+	--- if method has return type ---
+	public void method(int a) { return (a*a); }
+
+	(int a) -> {return (a*a);} ------> (a) -> {return (a*a);} ---> a -> a*a;
+
+	! if you use 'return' statement you need use curly braces;
+	! we can use lax without 'return', we just ommit 'return' and write expression without {}.
+	! if there's only one arg inside () , they are optional (a) -> a;
+
+	----------------------- Practice -----------------------
+
+	n -> return n*n; 		// false, we need use {} with 'return'
+	n -> {return n * n;};	// true, after lax put ;
+	n -> {return n*n};		// false, no ; after n*n
+	n -> {n*n;};			// false, no 'return', don't use {}
+	n -> n*n;			// true
+
+	--- How to call LAX ---
+	Functional Interface Concept.
+
+	Functional Interface in Java ---> contains single abstract method.
+	! more than one abstract method - it's regular interface
+
+	Default and static method can also be inside of interface.
+
+	Func Interface can have only one abstract method, and any num of def and static mehtods.
+
+	Runnable -> run() // functional interface
+	Callable -> call()
+	Comparable -> campareTo()
+	ActionListener -> actionPerformed()
+
+	! To call lax we use Functional Intefrace . Without Func Interface we cant use LAX.
+	LAX can be invoked through Functional Interface only.
+
+	interface {
+	public void fun(); // fun interface
+	}
+
+	interface {
+	public void fun();
+	default void fun1();
+	}
+
+	! Before creating Fun Interface, we need to specify it with annotation @FunctioinalInterface
+	It will not allow to add one more abstract method, will be error.
+	You can create static and def methods.

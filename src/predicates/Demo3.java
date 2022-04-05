@@ -28,6 +28,12 @@ public class Demo3 {
             if (p1.or(p2).test(i))
                 System.out.println(i);
         }
+
+        //negate
+        for (int i : a) {
+            if (p1.negate().test(i))
+                System.out.println(i);
+        }
     }
 }
 

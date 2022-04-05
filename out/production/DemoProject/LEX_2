@@ -1,0 +1,29 @@
+
+	=== Lambda expression ===
+
+	Pre-defined functional Interface - allow us to invoke LEX.
+	In Java we have 4 PDI
+
+	1. Predicate
+	2. Function
+	3. Consumer
+	4. Supplier
+
+	! Each interface has one abstract method. All they are inside: java.util.function;
+	----------------------------------------------------------------------------
+
+	|1| =====	Predicate Interface =====
+
+		- contains only one abstract method - test()
+		- we use it to check some condition.
+
+		interface Predicate(T) {
+			public abstract boolean test();
+		}
+
+	--- Coding Part ---
+
+	interface Predicate<T>
+	{
+		public abstract boolean test(T t);
+	}
