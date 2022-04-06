@@ -27,3 +27,82 @@
 	{
 		public abstract boolean test(T t);
 	}
+
+	=============================== #3 =================================
+	--- Function interface ---
+
+	- it has single method - apply()
+	- it takes any type as param
+	- return a single value of any type
+
+	###
+	    interface Function<T, R> {
+	         public R apply(T);
+	    }
+
+	- Function chaining:
+	andThen()
+	compose()
+
+	Summary:
+	Predicate ---> Type ---> boolean
+	                test()
+	Function ---> Parameter Type, Return type ---> Some type
+	                apply()
+
+	=============================== #4 =================================
+
+	 -> Consumer ---> accept()
+
+	    - take single param as input
+	    - doesn't return any value
+
+	 -> Supplier ---> get()
+	    - doesn't take any input value
+	    - return some obj/elem
+
+Summary:
+    Predicate<T>
+    Function<T, R>
+    Consumer<T>
+    Supplier<R>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
